@@ -12,6 +12,10 @@ let package = Package(
         .library(
             name: "CustomExecutorsKit",
             targets: ["CustomExecutorsKit"]
+        ),
+        .executable(
+            name: "Demo",
+            targets: ["Demo"]
         )
     ],
     targets: [
@@ -19,6 +23,11 @@ let package = Package(
             name: "CustomExecutorsKit",
             dependencies: [],
             path: "Sources/CustomExecutorsKit"
+        ),
+        .executableTarget(
+            name: "Demo",
+            dependencies: ["CustomExecutorsKit"],
+            path: "Examples/Demo"
         ),
         .testTarget(
             name: "CustomExecutorsKitTests",
